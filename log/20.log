@@ -1,0 +1,44 @@
+Nd: 20, N: 20,trainingerror: 0.003637, testerror: 0.163511
+Nd: 20, N: 24,trainingerror: 0.070728, testerror: 0.056442
+Nd: 20, N: 27,trainingerror: 0.060008, testerror: 0.073503
+Nd: 20, N: 32,trainingerror: 0.057451, testerror: 0.115574
+Nd: 20, N: 37,trainingerror: 0.035920, testerror: 0.043556
+Nd: 20, N: 43,trainingerror: 0.014362, testerror: 0.059315
+Nd: 20, N: 50,trainingerror: 0.042271, testerror: 0.472120
+Nd: 20, N: 58,trainingerror: 0.251697, testerror: 0.057441
+Nd: 20, N: 67,trainingerror: 0.072400, testerror: 0.044100
+Nd: 20, N: 78,trainingerror: 0.050615, testerror: 0.058347
+Nd: 20, N: 90,trainingerror: 0.030783, testerror: 0.257522
+Nd: 20, N: 104,trainingerror: 0.066613, testerror: 0.107382
+Nd: 20, N: 121,trainingerror: 0.066465, testerror: 0.052633
+Nd: 20, N: 141,trainingerror: 0.035951, testerror: 0.045582
+Nd: 20, N: 163,trainingerror: 0.080931, testerror: 0.167658
+Nd: 20, N: 190,trainingerror: 0.051205, testerror: 0.081099
+Nd: 20, N: 220,trainingerror: 0.042925, testerror: 0.037805
+Nd: 20, N: 256,trainingerror: 0.062000, testerror: 0.026849
+Nd: 20, N: 297,trainingerror: 0.047419, testerror: 0.048031
+Nd: 20, N: 345,trainingerror: 0.056467, testerror: 0.069739
+Nd: 20, N: 400,trainingerror: 0.073526, testerror: 0.066761
+Nd: 20, N: 465,trainingerror: 0.053397, testerror: 0.072910
+Nd: 20, N: 540,trainingerror: 0.053226, testerror: 0.076909
+Nd: 20, N: 627,trainingerror: 0.065455, testerror: 0.087587
+Nd: 20, N: 729,trainingerror: 0.108859, testerror: 0.071717
+Nd: 20, N: 846,trainingerror: 0.070144, testerror: 0.102176
+Nd: 20, N: 983,trainingerror: 0.063698, testerror: 0.047267
+Nd: 20, N: 1142,trainingerror: 0.040973, testerror: 0.076790
+Traceback (most recent call last):
+  File "/Users/manifect/Desktop/nn theory/./tasks.py", line 135, in <module>
+    for index, (x, y) in enumerate(train_dataloader):
+  File "/Users/manifect/opt/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/Users/manifect/opt/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 561, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/Users/manifect/opt/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    return self.collate_fn(data)
+  File "/Users/manifect/opt/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py", line 84, in default_collate
+    return [default_collate(samples) for samples in transposed]
+  File "/Users/manifect/opt/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py", line 84, in <listcomp>
+    return [default_collate(samples) for samples in transposed]
+  File "/Users/manifect/opt/miniconda3/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py", line 56, in default_collate
+    return torch.stack(batch, 0, out=out)
+KeyboardInterrupt

@@ -12,46 +12,51 @@
   <img src="assets/readme-figure.png" alt="Neural Network Theory Experiments overview" width="100%">
 </p>
 
-**Figure 1.** The overview figure presents the project as a theory-to-experiment loop: derive the model view, run controlled notebooks, measure approximation quality, and collect figures for comparison.
+## Abstract
 
-## Scope
+This repository is a conference-style artifact for neural-network theory experiments with notebooks and saved figures. It packages the code and notes needed to inspect the central research question: How do approximation, projection pursuit, and random-feature views align empirically? The emphasis is on transparent entry points, reproducible execution, and clear separation between code, local data, and generated outputs.
 
-This repository is organized as a conference-style research artifact for approximation, random features, and training-dynamics notebooks. Neural Network Theory Experiments is a notebook workspace for studying links between projection pursuit, neural-network regression, random features, and empirical training behavior. The folders keep logs, results, and figure-producing notebooks close to the analysis.
+## Artifact at a Glance
 
-The README is structured for fast inspection by reviewers and future collaborators: it states the artifact scope, the main entry points, the reproduction path, and the outputs that should be checked after a run.
+| Item | Details |
+| --- | --- |
+| Research question | How do approximation, projection pursuit, and random-feature views align empirically? |
+| Primary artifact | Theory notebooks, result folders, and figure-generation notebooks. |
+| Main entry points | `ppr&nnr.ipynb`, `ppr&nnr_figure*.ipynb`, `result/` |
+| Expected outputs | Approximation curves, logs, and report-ready figures. |
 
-## Artifact Contents
+## Repository Structure
 
-| Component | Role |
+| Item | Details |
 | --- | --- |
 | `ppr&nnr.ipynb` and variants | main notebooks for projection-pursuit and neural-network regression experiments. |
 | `result/`, `result1/` | saved outputs from experiment runs. |
 | `log/` | execution logs and intermediate notes. |
 | `ppr&nnr figure*` notebooks | figure-generation notebooks for report plots. |
 
-## Reproduction Guide
+## Reproducibility Protocol
 
 1. `git clone git@github.com:Hik289/nn-theory.git`
 2. `python -m venv .venv && source .venv/bin/activate`
 3. `python -m pip install -U pip jupyter numpy scipy matplotlib scikit-learn`
 4. Open the main notebook first, then use the figure notebooks to regenerate plots.
+5. Record the data window, random seed, software versions, machine type, and exact command used for any full rerun.
+6. Store regenerated figures, tables, checkpoints, or reports under the existing result folders instead of overwriting raw inputs.
 
-For a full rerun, record the data window, random seed, software versions, machine type, and command used for each experiment. Keep raw datasets outside Git unless they are small public fixtures.
+## Evaluation Protocol
 
-## Experimental Workflow
-
-| Stage | What to Check |
+| Step | Reviewer-facing check |
 | --- | --- |
-| Setup | Confirm local data paths, environment packages, and any MATLAB or notebook paths before running experiments. |
-| Run | Execute the smallest script or notebook first, then scale to the full experiment once outputs match expectations. |
-| Inspect | Compare generated figures, logs, tables, and saved result folders against the intended analysis. |
-| Extend | Add new experiments as separate scripts or notebooks with explicit names instead of overwriting existing artifacts. |
+| Environment | Confirm the listed runtime or notebook environment starts without modifying tracked files. |
+| Minimal run | Execute the smallest entry point before launching longer experiments. |
+| Output check | Compare regenerated files with the expected figures, tables, logs, or reports named in this README. |
+| Extension check | Add new runs as separate scripts, notebooks, or result folders with explicit names. |
 
-## Expected Outputs
+## Expected Results
 
-- Recreated figures, tables, notebooks, reports, or saved result files from the listed entry points.
-- A clear mapping from each experiment command to its generated output location.
-- Updated notes when a script depends on local data, private paths, or external software.
+- The main scripts or notebooks should regenerate the project-specific artifacts listed in **Artifact at a Glance**.
+- Outputs should be traceable to a command, parameter setting, and data window.
+- Any private data path or machine-specific setting should be documented before sharing the artifact externally.
 
 ## Paper or Reference
 
@@ -59,7 +64,7 @@ No external paper link is currently attached to this project. For now, the code,
 
 ## Citation
 
-If this repository supports academic work, cite the linked paper when available. Otherwise cite the repository version used in your experiment.
+If this repository supports a paper, cite the paper first and the artifact version second. If no paper is attached, cite the repository snapshot used in the experiment.
 
 ```bibtex
 @misc{nn_theory_artifact_2026,
@@ -67,7 +72,7 @@ If this repository supports academic work, cite the linked paper when available.
   author = {Hik289},
   year = {2026},
   howpublished = {\url{https://github.com/Hik289/nn-theory}},
-  note = {Research artifact}
+  note = {Conference-style research artifact}
 }
 ```
 
@@ -75,11 +80,11 @@ If this repository supports academic work, cite the linked paper when available.
 
 No explicit license file is included yet. Add one before public reuse, redistribution, or package release.
 
-## Reviewer Notes
+## Reviewer Checklist
 
-| Item | Status |
+| Claim | How to inspect it |
 | --- | --- |
-| Code | Included in this repository. |
-| Data | Expected to be configured locally unless a small fixture is committed. |
-| Environment | Base dependencies are listed in the reproduction guide; pin a lockfile for archival release. |
-| Results | Store generated artifacts under the existing result, report, log, or output folders. |
+| Code availability | Code and notebooks are present in the repository. |
+| Reproducibility | The protocol above gives the expected setup and run order. |
+| Result traceability | Generated outputs should live in named result, report, log, or output folders. |
+| Extensibility | New experiments should preserve existing artifacts and add clearly named outputs. |
